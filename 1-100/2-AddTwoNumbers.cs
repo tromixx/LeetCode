@@ -11,6 +11,17 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 using System;
 using System.Collections.Generic;
 
+/*
+Solution 
+0 numbers like ( 743, 564 )
+1 Start from the left to right ( loop - index)
+2 Get the number by index ( index = 0 => 7, 5 )
+3 Add those numbers ( 7 + 5 => 12 )
+4 Carry it if it is greater than 9 ( var carry = 12 / 10 => 1 )
+5 Increase the index ( index + 1 )
+6 Go to step 3 ( We need to pass carry value )
+*/
+
 public class Solution 
 {
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2, int carry = 0) 
