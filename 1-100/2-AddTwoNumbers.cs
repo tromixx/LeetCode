@@ -13,17 +13,12 @@ using System.Collections.Generic;
 
 public class Solution 
 {
-    public int[] TwoSum(int[] nums, int target) {
-        Dictionary<int, int> map = new Dictionary<int, int>();
-        
-        for(int i=0; i<nums.Length; i++){
-            int complement = target - nums[i];
-            if(map.ContainsKey(complement)){
-                return new int[] {map[complement], i};
-            }
-            
-            map[nums[i]] = i;
-        }
-        return new int[0];
+    public ListNode AddTwoNumbers(ListNode l1, ListNode l2, int carry = 0) 
+    {
+        if(l1 == null && l2 == null && carry == 0) return null;
+
+        int total = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
+        carry = total / 10;
+        return new ListNode(total % 10,  AddTwoNumbers(l1?.next, l2?.next, carry));
     }
 }
