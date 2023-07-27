@@ -12,6 +12,13 @@ using System;
 using System.Collections.Generic;
 
 /*
+You are given two non-empty linked lists representing two non-negative integers. 
+The digits are stored in reverse order, and each of their nodes contains a single digit. 
+Add the two numbers and return the sum as a linked list.
+*/
+
+
+/*
 Solution 
 0 numbers like ( 743, 564 )
 1 Start from the left to right ( loop - index)
