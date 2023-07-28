@@ -1,6 +1,8 @@
 //Longest Substring Without Repeating Characters
 /*
+Given a string s, find the length of the longest substring without repeating characters.
 
+Example:
 */
 public class Solution {
     public int LengthOfLongestSubstring(string s) {
