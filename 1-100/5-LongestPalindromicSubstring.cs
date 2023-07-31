@@ -10,6 +10,23 @@
 */
 public class Solution {
     public string LongestPalindrome(string s) {
-        //s.length <= 1000
+        int maxLength = 1;
+        var maxLengthStr = "";
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            //Odd Palindrom
+            int L = i; int R = i;
+            while(L >= 0 && R < s.Length && s[L]== s[R];)
+            {
+                if (R - L + 1 > maxLength)
+                {
+                    maxLength = R - L + 1;
+                    maxLengthStr = s.Substring(L, R - L + 1);
+                }
+                L--;
+                R++;
+            }
+        }
     }
 }
