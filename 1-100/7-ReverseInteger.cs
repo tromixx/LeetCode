@@ -1,32 +1,25 @@
 //cositas
-public class Solution {
-    public int Reverse(int x) 
+public class Solution 
+{
+    public int Reverse(int x)
     {
-        string forward = ToString(x);
-        string backwards = "";
+        var result = 0;
 
-        if(x>0)
+        while (x != 0)
         {
-            for(i = forward.Length - 1, i >= 0 ; i--)
-            {
-                backwards =+ forward[i];
-            }
-        }
-        else
-        {
-            x = x + x + x;
-            forward = ToString(x);
+            var remainder = x % 10;
+            var temp = result * 10 + remainder;
 
-            for(i = forward.Length - 1, i >= 0 ; i--)
+            // in case of overflow, the current value will not be equal to the previous one
+            if ((temp - remainder) / 10 != result)
             {
-                backwards =+ forward[i];
+                return 0;
             }
 
+            result = temp;
+            x /= 10;
         }
-
-        int backwardsInt = Int32.Parse(backwards);
-
-        return backwardsInt;
-
+        
+        return result;
     }
 }
