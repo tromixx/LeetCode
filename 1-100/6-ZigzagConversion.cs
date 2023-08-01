@@ -10,7 +10,6 @@ Write the code that will take a string and make this conversion given a number o
 
 string convert(string s, int numRows);
 */
-
 //Time complexity: O(n)
 //Space complexity: O(n)
 
