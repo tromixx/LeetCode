@@ -1,29 +1,30 @@
-
-//13 
+//cositas
 public class Solution {
-    private readonly Dictionary<char, int> dict = new Dictionary<char, int>{{'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}};
-    
-    public int RomanToInt(string s) {
-   
-        char[] ch = s.ToCharArray();
-    
-        int result = 0;
-        int intVal,nextIntVal;
-            
-        for(int i = 0; i <ch.Length ; i++){
-            intVal = dict[ch[i]];
-            
-            if(i != ch.Length-1)
+    public int MyAtoi(string s) {
+        //trim
+        string sTrim = s.Trim();
+        string sClean = "";
+        //var sClean = new StringBuilder();
+        
+        // + - o nada
+        for(int i = 0; i < sTrim.Length; i++)
+        {
+            if(sTrim[i] == '-' ||sTrim[i] == '0' ||
+             sTrim[i] == '1' || sTrim[i]=='2' || sTrim[i]=='3' || sTrim[i]=='4' || sTrim[i]=='5' || sTrim[i]=='6' || sTrim[i]=='7' || sTrim[i]=='8' || sTrim[i]=='9')
             {
-                nextIntVal = dict[ch[i+1]];
-                
-                if(nextIntVal>intVal){
-                    intVal = nextIntVal-intVal;
-                    i = i+1;
-                }
+                sClean = sClean + sTrim[i];
+                //sClean.Append(sTrim[i]);
             }
-             result = result + intVal;
+            else
+            {
+                continue;
+            }
         }
-        return result;
+
+        //var sSuperClean = sClean.ToString();
+
+        int sInt = Int32.Parse(sClean);
+        return sInt;
+        
     }
 }
