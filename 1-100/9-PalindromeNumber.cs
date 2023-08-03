@@ -1,5 +1,5 @@
 //Given an integer x, return true if x is a palindrome, and false otherwise.
-
+//Int to String to Int
 public class Solution {
     public bool IsPalindrome(int x) {
 
