@@ -28,6 +28,8 @@ public class Solution {
 
 
 //No string needed
+//Time complexity: O(n) where n is the number of digits
+//Space complexity: O(1)
 
 public class Solution {
     public bool IsPalindrome(int x) {
