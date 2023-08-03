@@ -2,7 +2,26 @@
 
 public class Solution {
     public bool IsPalindrome(int x) {
-        //create p that is reverse of x
-        //compare if p = x, if it is true, otherwise false
+
+        string reverseX = "";
+        string stringX = x.ToString();
+
+        for(int i = stringX.Length - 1; i > -1; i--)
+        {
+            if(stringX[i] == '-')
+            {
+                continue;
+            }else
+            {
+                reverseX += stringX[i];
+            }
+        }
+        long reverseInt = long.Parse(reverseX);
+        if(reverseInt == x)
+        {
+            return true;
+        }
+        else
+        return false;
     }
 }
