@@ -11,9 +11,9 @@ public class Solution {
 
         3999 max
         */
-        var numStr = ToString(num);
-        var leng = numStr.Length() ;
-        var finalString = "";
+        var numStr = num.ToString();
+        var leng = numStr.Length;
+        string finalString = "";
 
         while(leng != -1)
         {
@@ -22,69 +22,71 @@ public class Solution {
             {
                 if(numStr[leng] == 1)
                 {
-                    finalString =+ 'M';
+                    finalString += 'M';
                 }
 
                 else if(numStr[leng] == 2)
                 {
-                    finalString =+ 'M' + 'M';
+                    finalString += 'M' + 'M';
                 }
 
                 else
                 {
-                    finalString =+ 'M' + 'M' + 'M';
+                    finalString += 'M' + 'M' + 'M';
                 }
             }
 
             //for 1-9
             if(leng == 0)
             {
-                if(numStr[leng] == 1)
+                if(numStr[leng] == '1')
                 {
-                    finalString =+ 'I';
+                    finalString += 'I';
                 }
 
-                else if(numStr[leng] == 2)
+                else if(numStr[leng] == '2')
                 {
-                    finalString =+ 'I' + 'I';
+                    finalString += 'I' + 'I';
                 }
 
-                else if(numStr[leng] == 3)
+                else if(numStr[leng] == '3')
                 {
-                    finalString =+ 'I' + 'I' + 'I';
+                    finalString += "III";
                 }
 
-                else if(numStr[leng] == 4)
+                else if(numStr[leng] == '4')
                 {
-                    finalString =+ 'I' + 'I' + 'I' + 'I';
+                    finalString += "IIII";
                 }
 
-                else if(numStr[leng] == 5)
+                else if(numStr[leng] == '5')
                 {
-                    finalString =+ 'V';
+                    finalString += 'V';
                 }
 
-                else if(numStr[leng] == 6)
+                else if(numStr[leng] == '6')
                 {
-                    finalString =+ 'V' + 'I';
+                    finalString += 'V' + 'I';
                 }
 
-                else if(numStr[leng] == 7)
+                else if(numStr[leng] == '7')
                 {
-                    finalString =+ 'V' + 'I' + 'I';
+                    finalString += 'V' + 'I' + 'I';
                 }
 
-                else if(numStr[leng] == 8)
+                else if(numStr[leng] == '8')
                 {
-                    finalString =+ 'V' + 'I' + 'I' + 'I';
+                    finalString += 'V' + 'I' + 'I' + 'I';
                 }
 
-                else if(numStr[leng] == 9)
+                else if(numStr[leng] == '9')
                 {
-                    finalString =+ 'V' + 'I' + 'I' + 'I' + 'I';
+                    finalString += 'V' + 'I' + 'I' + 'I' + 'I';
                 }
             }
             leng--;
         }
+
+        return finalString;
     }
 }
