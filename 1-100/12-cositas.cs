@@ -1,5 +1,4 @@
-public class Solution {
-    public string IntToRoman(int num) {
+
         /*
         I             1
         V             5
@@ -11,82 +10,22 @@ public class Solution {
 
         3999 max
         */
-        var numStr = num.ToString();
-        var leng = numStr.Length;
-        string finalString = "";
+public class Solution {
+    public string IntToRoman(int num) {
+        if (num >= 1000) return "M" + IntToRoman(num - 1000);
 
-        while(leng != -1)
-        {
-            //for 1000 - 3000
-            if(leng == 3)
-            {
-                if(numStr[leng] == 1)
-                {
-                    finalString += 'M';
-                }
+        if (num >= 500) return num >= 900 ? ("CM" + IntToRoman(num - 900)) : ("D" + IntToRoman(num - 500));
 
-                else if(numStr[leng] == 2)
-                {
-                    finalString += 'M' + 'M';
-                }
+        if (num >= 100) return num >= 400 ? ("CD" + IntToRoman(num - 400)) : ("C" + IntToRoman(num - 100));
 
-                else
-                {
-                    finalString += 'M' + 'M' + 'M';
-                }
-            }
+        if (num >= 50) return num >= 90 ? ("XC" + IntToRoman(num - 90)) : ("L" + IntToRoman(num - 50));
 
-            //for 1-9
-            if(leng == 0)
-            {
-                if(numStr[leng] == '1')
-                {
-                    finalString += 'I';
-                }
+        if (num >= 10) return num >= 40 ? ("XL" + IntToRoman(num - 40)): ("X" + IntToRoman(num - 10));
 
-                else if(numStr[leng] == '2')
-                {
-                    finalString += 'I' + 'I';
-                }
+        if (num >= 5) return num == 9 ? "IX" : "V" + IntToRoman(num - 5);
 
-                else if(numStr[leng] == '3')
-                {
-                    finalString += "III";
-                }
+        if (num > 0) return num == 4 ? "IV" : "I" + IntToRoman(num - 1);
 
-                else if(numStr[leng] == '4')
-                {
-                    finalString += "IIII";
-                }
-
-                else if(numStr[leng] == '5')
-                {
-                    finalString += 'V';
-                }
-
-                else if(numStr[leng] == '6')
-                {
-                    finalString += 'V' + 'I';
-                }
-
-                else if(numStr[leng] == '7')
-                {
-                    finalString += 'V' + 'I' + 'I';
-                }
-
-                else if(numStr[leng] == '8')
-                {
-                    finalString += 'V' + 'I' + 'I' + 'I';
-                }
-
-                else if(numStr[leng] == '9')
-                {
-                    finalString += 'V' + 'I' + 'I' + 'I' + 'I';
-                }
-            }
-            leng--;
-        }
-
-        return finalString;
+        return "";   
     }
 }
