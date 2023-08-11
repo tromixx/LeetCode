@@ -15,3 +15,15 @@ Notice that the order of the output and the order of the triplets does not matte
 
 */
 
+public class Solution {
+    public IList<IList<int>> ThreeSum(int[] nums) 
+    {
+        // p = nums.Length();
+        //si es 3 sumar si es menos descartar
+
+        // for(i = nums.Length(); i > 0 ;i++)
+        //{ chek if result tiene 3,
+        //si tiene 3 pop and result += nums[i];}
+    }
+}
+
