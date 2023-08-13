@@ -13,6 +13,13 @@ Explanation: There is no common prefix among the input strings.
 
 */
 
+
+/*
+Get the shortest word
+Make sure that each of its characters can be found in every other word in the same place.
+a. If not, return what you have checked so far.
+b. If yes, go on.
+*/
 public class Solution {
     public string LongestCommonPrefix(string[] strs) {
 
