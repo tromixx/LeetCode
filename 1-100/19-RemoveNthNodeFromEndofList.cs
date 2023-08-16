@@ -14,5 +14,22 @@ public class Solution {
     public ListNode RemoveNthFromEnd(ListNode head, int n) {
         //var finalNode ,
         //foreach(i...) (if ListNode[i]){skip, otherwise save to finalNode}
+        
+        List<int> list = new List<int>();
+
+        while (head != null){
+            list.Add(head.val);
+            head = head.next;
+        }
+        int removeIndex = list.Count() - n;
+        list.RemoveAt(removeIndex);
+
+        ListNode prev = new ListNode();
+        var dummy = prev;
+        foreach (int i in list){
+            dummy.next = new ListNode(i);
+            dummy = dummy.next;
+        }
+        return prev.next;        
     }
 }
