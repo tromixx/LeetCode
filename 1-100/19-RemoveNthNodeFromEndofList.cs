@@ -9,3 +9,10 @@ Example 2:
 Input: head = [1], n = 1
 Output: []
 */
+
+public class Solution {
+    public ListNode RemoveNthFromEnd(ListNode head, int n) {
+        //var finalNode ,
+        //foreach(i...) (if ListNode[i]){skip, otherwise save to finalNode}
+    }
+}
