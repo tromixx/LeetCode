@@ -19,12 +19,58 @@ Input: s = "()[]{}"
 Output: true
 */
 
-//Solution 1
+//First Solution incompleted
 
 public class Solution {
     public bool IsValid(string s) {
-        //cositas
-        //'(', ')', '{', '}', '[' and ']'
+        var p = s.Length;
+        if(p%2 == 1)
+        {
+            return false;
+        }
+        while(p != 0)
+        {
+            if(s.[p-1] == ']' &&  s.[p-2] == '[')
+            {
+                if(p >= 2)
+                {
+                    p = p -2;
+                    continue;
+                }
+                else
+                {
+                    return true;
+                }  
+            }
+            else if(s.[p-1] == ')' &&  s.[p-2] == '(')
+            {
+                if(p >= 2)
+                {
+                    p = p -2;
+                    continue;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else if(s.[p-1] == '}' &&  s.[p-2] == '{')
+            {
+                if(p >= 2)
+                {
+                    p = p -2;
+                    continue;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
 
@@ -32,7 +78,7 @@ public class Solution {
 
 //Second Solution
 
-public class Solution {
+public class Solution 
     public bool IsValid(string s) {
         while (s.Contains("()") || s.Contains("[]") || s.Contains("{}"))
         {
