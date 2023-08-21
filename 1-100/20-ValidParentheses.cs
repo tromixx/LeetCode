@@ -19,6 +19,17 @@ Input: s = "()[]{}"
 Output: true
 */
 
+//Solution 1
+
+public class Solution {
+    public bool IsValid(string s) {
+        //cositas
+        //'(', ')', '{', '}', '[' and ']'
+    }
+}
+
+
+
 //Second Solution
 
 public class Solution {
