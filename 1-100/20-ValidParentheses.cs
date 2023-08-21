@@ -79,7 +79,14 @@ public class Solution {
 //Second Solution
 
 public class Solution 
-    public bool IsValid(string s) {
+{
+    public bool IsValid(string s) 
+    {
+        var p = s.Length;
+        if(p%2 == 1)
+        {
+            return false;
+        }
         while (s.Contains("()") || s.Contains("[]") || s.Contains("{}"))
         {
             s = s.Replace("()", "").Replace("[]", "").Replace("{}", "");
