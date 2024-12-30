@@ -22,19 +22,19 @@ haystack and needle consist of only lowercase English characters.
 */
 
 public class Solution {
-    public int RemoveElement(int[] nums, int val) 
+    public int StrStr(string haystack, string needle) 
     {
-        int writeIndex = 0;
-
-        for (int i = 0; i < nums.Length; i++) 
+        if(string.IsNullOrEmpty(needle))
         {
-            if (nums[i] != val) 
-            {
-                nums[writeIndex] = nums[i];
-                writeIndex++;
-            }
+            return 0;
         }
 
-        return writeIndex;
+        for(int i = 0; haystack.Length - needle.Length; i++)
+        {
+            /// Check if the substring from the current position matches the needle
+            if(haystack.Substring(i, needle.Length) == needle) 
+            /// {// Return the starting index of the match}
+        }
+        return -1;
     }
 }
