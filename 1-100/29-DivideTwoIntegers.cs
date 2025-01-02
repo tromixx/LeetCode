@@ -28,6 +28,38 @@ divisor != 0
 */
 public class Solution {
     public int Divide(int dividend, int divisor) {
-        
+        // Handle edge cases for overflow
+        if (dividend == int.MinValue && divisor == -1) {
+            return int.MaxValue; // Overflow case
+        }
+
+        // Determine the sign of the result
+        bool isNegative = (dividend < 0) ^ (divisor < 0);
+
+        // Convert both numbers to their absolute values (use long to avoid overflow)
+        long absDividend = Math.Abs((long)dividend);
+        long absDivisor = Math.Abs((long)divisor);
+
+        int result = 0;
+
+        // Perform subtraction-based division using bit shifts
+        while (absDividend >= absDivisor) {
+            long tempDivisor = absDivisor;
+            int multiple = 1;
+
+            // Use bit shifts to find the largest multiple of the divisor that fits
+            while (absDividend >= (tempDivisor << 1)) {
+                tempDivisor <<= 1;
+                multiple <<= 1;
+            }
+
+            // Subtract the found multiple and add it to the result
+            absDividend -= tempDivisor;
+            result += multiple;
+        }
+
+        // Apply the sign to the result
+        return isNegative ? -result : result;
     }
 }
+
