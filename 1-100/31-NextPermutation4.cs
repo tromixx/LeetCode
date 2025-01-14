@@ -36,8 +36,54 @@ Constraints:
 1 <= nums.length <= 100
 0 <= nums[i] <= 100
 */
-public class Solution {
-    public void NextPermutation(int[] nums) {
+
+/*
+How to solve it:
+Find the first decreasing element (pivot): Traverse the array from right to left to find the first index i such that nums[i] < nums[i + 1]. If no such index exists, the array is sorted in descending order, and we simply reverse it to get the lowest possible order.
+
+Find the element to swap with the pivot: From right to left, find the smallest element that is greater than nums[i] and swap it with nums[i].
+
+Reverse the suffix: Reverse the elements after index i to get the smallest lexicographical order.
+*/
+public class Solution 
+{
+    public void NextPermutation(int[] nums) 
+    {
+        int n = nums.Length;
+        int i = n - 2;
+        // Step 1: Find the first decreasing element
+        while (i >= 0 && nums[i] >= nums[i + 1])
+        {
+            i--;
+        }
         
+        if (i >= 0) // if array is not in descending order
+        {
+            int j = n - 1;
+            while (nums[j] <= nums[i])
+            {
+                j--;
+            }
+            Swap(nums, i, j);
+        }
+
+        Reverse(nums, i + 1, n - 1);
+    }
+
+    private void Swap(int[] nums, int i, int j)
+    {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    private void Reverse(int[] nums, int start, int end)
+    {
+        while (start < end)
+        {
+            Swap(nums, start, end);
+            start++;
+            end--;
+        }
     }
 }
