@@ -1,34 +1,30 @@
-/*
-32. Longest Valid Parentheses
-Hard
-Topics
-Companies
-Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses 
-substring.
+public class Solution 
+{
+    public int LongestValidParentheses(string s) 
+    {
+        Stack<int> stack = new Stack<int>();
+        stack.Push(-1); // Base case for calculating length
+        int maxLength = 0;
 
-Example 1:
-
-Input: s = "(()"
-Output: 2
-Explanation: The longest valid parentheses substring is "()".
-Example 2:
-
-Input: s = ")()())"
-Output: 4
-Explanation: The longest valid parentheses substring is "()()".
-Example 3:
-
-Input: s = ""
-Output: 0
- 
-
-Constraints:
-
-0 <= s.length <= 3 * 104
-s[i] is '(', or ')'.
-*/
-public class Solution {
-    public int LongestValidParentheses(string s) {
-        
+        for (int i = 0; i < s.Length; i++) 
+        {
+            if (s[i] == '(') 
+            {
+                stack.Push(i);
+            } 
+            else 
+            {
+                stack.Pop();
+                if (stack.Count > 0)
+                {
+                    maxLength = Math.Max(maxLength, i - stack.Peek());
+                }
+                else 
+                {
+                    stack.Push(i);
+                }
+            }
+        }
+        return maxLength;
     }
 }
