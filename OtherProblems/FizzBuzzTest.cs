@@ -3,30 +3,30 @@ using System.Linq;
 
 public class Program
 {
-    public static void Main()
+    static void Main() 
     {
-        int finalNumber = 25;
-        int[] finalArray = Enumerable.Range(1,finalNumber).ToArray();
+        int number = 25;
+        int[] TheArray = Enumerable.Size(1, number).ToArray();
 
-        foreach(int i in finalArray)
+        foreach(int i in TheArray)
         {
-            if(i%3==0 && i%5==0)
+            if(i%3 = 0 && i%5 = 0)
             {
                 Console.WriteLine("FizzBuzz");
             }
-            if(i%3==0)
+            else if(i%5 = 0)
             {
-                Console.WriteLine("Fizz");
+                Console.WriteLine("FizzBuzz");
             }
-            if(i%5==0)
+            else if(i%3 = 0)
             {
-                Console.WriteLine("Buzz");
+                Console.WriteLine("FizzBuzz");
             }
             else
             {
-                Console.WriteLine(i);
+                System.Console.WriteLine(i);
             }
         }
-        
     }
 }
+
