@@ -1,5 +1,6 @@
 /*
-Problem: Given a list of available coin denominations and an amount, find the minimum number of coins needed to make the change.
+Problem: Given a list of available coin denominations and an amount, 
+find the minimum number of coins needed to make the change.
 
 Example:
 
